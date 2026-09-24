@@ -1,0 +1,54 @@
+{
+  "_what_this_is": "Every figure and claim this benchmark has WITHDRAWN, in every spelling it could have been written in. It is the needle set the retraction check hunts, and it is machine-read, so it is JSON rather than prose. The two withdrawals it records are numbered review findings 13 and 14 of the superseded campaign, quoted in the Retracted section of results/RESULTS.md.",
+  "_where_the_needles_came_from": "The spellings below are the thirteen a one-off sweep applied on 2026-09-18, adopted rather than re-derived. Eight of them found nothing in either this repository or the sibling benchmark, and they are kept for exactly that reason: dropping a needle that returned zero turns 'we looked for thirteen spellings' into 'we looked for five', which is a different and much weaker statement.",
+  "_why_the_word_forms_carry_context_terms": "A word-form needle with no `cache` or `hit rate` near it is ordinary English about some other subject. The sibling benchmark carries two such sentences, about how many documents a query matches, and they are false positives rather than leaks. Without these terms the check would report them as live claims and teach its reader to ignore it.",
+  "reviewed_on": "2026-09-21",
+  "retracted": [
+    {
+      "id": "milder-skew-hit-rate",
+      "withdrawn_on": "2026-07-31",
+      "why": "The milder-skew run was cited for the claim that the aggressive skew does not inflate the result. It executed no guards, no driver probe and no checksum pass, and its hit rate barely moved, so it could not discriminate the hypothesis it was cited for. The three files it produced now each carry a top-level `withdrawn` block and are kept, not deleted: a withdrawn machine record is the evidence of what was withdrawn.",
+      "needles": [
+        "0.9882",
+        "98.8",
+        "0.9794",
+        "97.94"
+      ]
+    },
+    {
+      "id": "milder-skew-closed-loop-ratio",
+      "withdrawn_on": "2026-07-31",
+      "why": "The closed-loop ratio the same withdrawn run produced at the milder skew. It is recorded in results/sensitivity-mild-skew.json and is to be treated as unvalidated.",
+      "needles": [
+        "1.527",
+        "152.7"
+      ]
+    },
+    {
+      "id": "uniform-traffic-near-zero-hit-rate",
+      "withdrawn_on": "2026-07-31",
+      "why": "The claim that uniform traffic over the tenant population would give a near-zero hit rate is FALSE: over 200,000 requests a warm cache reaches about 90% even uniformly. It was corrected in place in benchlib/workload.py and in README.md -- seven weeks after the retraction that announced the correction, which is recorded beside the retraction rather than edited out of it.",
+      "context_terms": [
+        "cache",
+        "hit rate",
+        "hit-rate"
+      ],
+      "needles": [
+        "near-zero",
+        "near zero",
+        "near_zero",
+        "negligible",
+        "essentially zero",
+        "almost no",
+        "almost nothing",
+        "almost zero",
+        "close to zero",
+        "virtually no",
+        "virtually zero",
+        "vanishingly"
+      ]
+    }
+  ],
+  "schema": "canonkit/retractions/1",
+  "schema_version": "canonkit/1"
+}

@@ -1,0 +1,82 @@
+{
+  "arm": "on",
+  "executor": "constant-arrival-rate",
+  "rates": [
+    8000,
+    8500,
+    9000,
+    9500
+  ],
+  "duration": "10s",
+  "p99_ceiling_ms": 250.0,
+  "max_drop_fraction": 0.01,
+  "levels": [
+    {
+      "target_rate": 8000,
+      "achieved_rps": 6902.7,
+      "completed": 70552,
+      "dropped_iterations": 9448,
+      "failed_rate": 0,
+      "p50_ms": 104.18,
+      "p99_ms": 603.68,
+      "max_ms": 3185.78,
+      "cache_states": {
+        "cache_hit": 67624,
+        "cache_miss": 2928
+      },
+      "dropped_fraction": 0.1181,
+      "passed": false
+    },
+    {
+      "target_rate": 8500,
+      "achieved_rps": 8151.9,
+      "completed": 81869,
+      "dropped_iterations": 3135,
+      "failed_rate": 0,
+      "p50_ms": 59.46,
+      "p99_ms": 162.91,
+      "max_ms": 468.69,
+      "cache_states": {
+        "cache_hit": 81315,
+        "cache_miss": 554
+      },
+      "dropped_fraction": 0.03688,
+      "passed": false
+    },
+    {
+      "target_rate": 9000,
+      "achieved_rps": 8409.8,
+      "completed": 84996,
+      "dropped_iterations": 5005,
+      "failed_rate": 0,
+      "p50_ms": 68.16,
+      "p99_ms": 167.37,
+      "max_ms": 432.94,
+      "cache_states": {
+        "cache_hit": 84916,
+        "cache_miss": 80
+      },
+      "dropped_fraction": 0.05561,
+      "passed": false
+    },
+    {
+      "target_rate": 9500,
+      "achieved_rps": 7840.6,
+      "completed": 79900,
+      "dropped_iterations": 15101,
+      "failed_rate": 0,
+      "p50_ms": 123.28,
+      "p99_ms": 2147.28,
+      "max_ms": 4451.59,
+      "cache_states": {
+        "cache_hit": 79777,
+        "cache_miss": 123
+      },
+      "dropped_fraction": 0.15896,
+      "passed": false
+    }
+  ],
+  "capacity_at_p99_ceiling": {
+    "note": "no rate held the ceiling"
+  }
+}

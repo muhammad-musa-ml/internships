@@ -1,0 +1,47 @@
+{
+  "sources": {
+    "app/main.py": "b78e8026340d074d815893fe0d587dfda60f0f27c05c69ca5f21c9de4ac10564",
+    "app/seed.py": "e1efcdb4134514190953b11434f0f81c5eab8ebcf41e22989a41ad28bf6304d1",
+    "app/Dockerfile": "c2c2d5c331c0c5bdee9354cd468a5fd69b40f1754f7e9c26abd834b9316e9ba4",
+    "docker-compose.yml": "37263ea5312226dfc92b006f2e89144058dc96aefdf4744506f26f611f45be03",
+    "benchlib/workload.py": "943ef87fc882955ca9845ecf3bb52624bd9abd7a0019376c08fd8309ce434f96",
+    "benchlib/driver.py": "2a6320aac6ea4a340b7730a4f338e648ecf0d8325e9d55aae86f74a5af80c89f",
+    "k6/sweep.js": "cb44baccd24e8761dd433d0894a5d37683dc71df5a1c5f310b9858df823a6578",
+    "k6/null.js": "80ccc8a487cae053f43ef1c7d12edcf5313484c743bedb2c6c7afbe65bd9211d",
+    "k6/rate.js": "1a418bf556c7116e8af7edc695e57bf902d41db95a0b434d228fd2144f76b02c",
+    "run_k6_sweep.py": "6820f48d6bf9402447c51f4ca187204e8c0132b1b9a5799c8eb55be44c0141ba",
+    "run_rate_test.py": "b84460d28e908e8eda3973021e886996ae9868b5227e14120dae4b178ca73a78",
+    "collect_checksums.py": "3529360465d82d6c22753f43c70ab24d0290e082b409a8ead7269f95de4306fd",
+    "finalize.py": "5e295c5a8a7f606c57645b44a6d650d4bcce231556f0a317ce0c518e7f96c01a",
+    "make_sequence.py": "f3d61930b0d0f40d920b79f629bb57eba0b99b8e0d4cfdb18ab597de5ff2ca54"
+  },
+  "images": {
+    "postgres:16.4": "postgres@sha256:e62fbf9d3e2b49816a32c400ed2dba83e3b361e6833e624024309c35d334b412",
+    "redis:7.4-alpine": "redis@sha256:e7723ff73d963f5cc6d9c4643ea3d989527a402a319239054e9472a7fb9219a2",
+    "grafana/k6:latest": "grafana/k6@sha256:e7eeddf1ce2361df6920d925297f487c0ba549c44be242c6a9c22f28d9b08efa"
+  },
+  "host": {
+    "cpu_count": 24,
+    "platform": "win32"
+  },
+  "sequence": {
+    "sha256": "2d5b73c6b5a7e706e2a27b62429ca031c5dc9b712dded067428c3ff59974799a",
+    "bytes": 1258622,
+    "description": {
+      "requests": 200000,
+      "distinct_tenants_touched": 11106,
+      "n_tenants_total": 20000,
+      "share_top_1pct_of_tenants": 0.7891,
+      "share_top_10_tenants": 0.5047,
+      "theoretical_max_hit_rate": 0.9445,
+      "note": "theoretical_max_hit_rate is the ceiling a perfect cache could reach on this sequence: every request after the first for a given key. The measured hit rate must be at or below it."
+    }
+  },
+  "service_config": {
+    "cache_on": false,
+    "workers": 4,
+    "pg_pool_min": 8,
+    "pg_pool_max": 32,
+    "cache_ttl_seconds": 300
+  }
+}

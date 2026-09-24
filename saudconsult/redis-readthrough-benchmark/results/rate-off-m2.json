@@ -1,0 +1,30 @@
+{
+  "arm": "off",
+  "executor": "constant-arrival-rate",
+  "rates": [
+    6000
+  ],
+  "duration": "10s",
+  "p99_ceiling_ms": 250.0,
+  "max_drop_fraction": 0.01,
+  "levels": [
+    {
+      "target_rate": 6000,
+      "achieved_rps": 4413.9,
+      "completed": 45594,
+      "dropped_iterations": 14407,
+      "failed_rate": 0,
+      "p50_ms": 369.16,
+      "p99_ms": 1612.41,
+      "max_ms": 3196.82,
+      "cache_states": {
+        "cache_off": 45594
+      },
+      "dropped_fraction": 0.24012,
+      "passed": false
+    }
+  ],
+  "capacity_at_p99_ceiling": {
+    "note": "no rate held the ceiling"
+  }
+}

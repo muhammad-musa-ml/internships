@@ -1,0 +1,10 @@
+{
+  "requests": 200000,
+  "distinct_tenants_touched": 11106,
+  "n_tenants_total": 20000,
+  "share_top_1pct_of_tenants": 0.7891,
+  "share_top_10_tenants": 0.5047,
+  "theoretical_max_hit_rate": 0.9445,
+  "note": "theoretical_max_hit_rate is the ceiling a perfect cache could reach on this sequence: every request after the first for a given key. The measured hit rate must be at or below it.",
+  "zipf_a": 1.2
+}

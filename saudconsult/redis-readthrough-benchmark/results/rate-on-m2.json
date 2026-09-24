@@ -1,0 +1,42 @@
+{
+  "arm": "on",
+  "executor": "constant-arrival-rate",
+  "rates": [
+    6000
+  ],
+  "duration": "10s",
+  "p99_ceiling_ms": 250.0,
+  "max_drop_fraction": 0.01,
+  "levels": [
+    {
+      "target_rate": 6000,
+      "achieved_rps": 5997.5,
+      "completed": 59957,
+      "dropped_iterations": 44,
+      "failed_rate": 0,
+      "p50_ms": 4.47,
+      "p99_ms": 57.19,
+      "max_ms": 103.58,
+      "cache_states": {
+        "cache_hit": 59957
+      },
+      "dropped_fraction": 0.00073,
+      "passed": true
+    }
+  ],
+  "capacity_at_p99_ceiling": {
+    "target_rate": 6000,
+    "achieved_rps": 5997.5,
+    "completed": 59957,
+    "dropped_iterations": 44,
+    "failed_rate": 0,
+    "p50_ms": 4.47,
+    "p99_ms": 57.19,
+    "max_ms": 103.58,
+    "cache_states": {
+      "cache_hit": 59957
+    },
+    "dropped_fraction": 0.00073,
+    "passed": true
+  }
+}

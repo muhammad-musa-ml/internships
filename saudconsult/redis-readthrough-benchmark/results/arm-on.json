@@ -1,0 +1,233 @@
+{
+  "arm": "on",
+  "ladder": [
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256,
+    512
+  ],
+  "duration": "8s",
+  "warmup": "3s",
+  "warmup_offset": 0,
+  "measure_offset": 100000,
+  "workload": {
+    "requests": 200000,
+    "distinct_tenants_touched": 11106,
+    "n_tenants_total": 20000,
+    "share_top_1pct_of_tenants": 0.7891,
+    "share_top_10_tenants": 0.5047,
+    "theoretical_max_hit_rate": 0.9445,
+    "note": "theoretical_max_hit_rate is the ceiling a perfect cache could reach on this sequence: every request after the first for a given key. The measured hit rate must be at or below it.",
+    "zipf_a": 1.2
+  },
+  "levels": [
+    {
+      "vus": 4,
+      "rps": 4234.4,
+      "completed": 33533,
+      "failed_rate": 0,
+      "ms": {
+        "p50": 0.72,
+        "p95": 1.82,
+        "p99": 2.33,
+        "max": 5.26,
+        "avg": 0.86
+      },
+      "cache_states": {
+        "cache_hit": 30537,
+        "cache_miss": 2996
+      }
+    },
+    {
+      "vus": 8,
+      "rps": 7183.4,
+      "completed": 57479,
+      "failed_rate": 0,
+      "ms": {
+        "p50": 0.91,
+        "p95": 1.62,
+        "p99": 2.88,
+        "max": 7.44,
+        "avg": 1.01
+      },
+      "cache_states": {
+        "cache_hit": 55903,
+        "cache_miss": 1576
+      }
+    },
+    {
+      "vus": 16,
+      "rps": 10388.3,
+      "completed": 82303,
+      "failed_rate": 0,
+      "ms": {
+        "p50": 1.27,
+        "p95": 2.73,
+        "p99": 5.31,
+        "max": 15.62,
+        "avg": 1.45
+      },
+      "cache_states": {
+        "cache_hit": 80690,
+        "cache_miss": 1613
+      }
+    },
+    {
+      "vus": 32,
+      "rps": 12286.5,
+      "completed": 98328,
+      "failed_rate": 0,
+      "ms": {
+        "p50": 2.2,
+        "p95": 4.58,
+        "p99": 6.24,
+        "max": 20.55,
+        "avg": 2.49
+      },
+      "cache_states": {
+        "cache_hit": 97632,
+        "cache_miss": 696
+      }
+    },
+    {
+      "vus": 64,
+      "rps": 14168.7,
+      "completed": 112077,
+      "failed_rate": 0,
+      "ms": {
+        "p50": 4.31,
+        "p95": 7.09,
+        "p99": 9.63,
+        "max": 59.95,
+        "avg": 4.44
+      },
+      "cache_states": {
+        "cache_hit": 111748,
+        "cache_miss": 329
+      }
+    },
+    {
+      "vus": 128,
+      "rps": 13471.2,
+      "completed": 107881,
+      "failed_rate": 0,
+      "ms": {
+        "p50": 8.86,
+        "p95": 14.15,
+        "p99": 18.72,
+        "max": 64.06,
+        "avg": 9.34
+      },
+      "cache_states": {
+        "cache_hit": 107523,
+        "cache_miss": 358
+      }
+    },
+    {
+      "vus": 256,
+      "rps": 13370.8,
+      "completed": 107230,
+      "failed_rate": 0,
+      "ms": {
+        "p50": 17.84,
+        "p95": 29.73,
+        "p99": 42.25,
+        "max": 135.79,
+        "avg": 18.87
+      },
+      "cache_states": {
+        "cache_hit": 107127,
+        "cache_miss": 103
+      }
+    },
+    {
+      "vus": 512,
+      "rps": 14317.5,
+      "completed": 114924,
+      "failed_rate": 0,
+      "ms": {
+        "p50": 33.12,
+        "p95": 55.01,
+        "p99": 70.52,
+        "max": 554.22,
+        "avg": 35.16
+      },
+      "cache_states": {
+        "cache_hit": 114911,
+        "cache_miss": 13
+      }
+    }
+  ],
+  "sustained": {
+    "sustained_rps": 14317.5,
+    "at_vus": 512,
+    "p99_ms": 70.52,
+    "p50_ms": 33.12
+  },
+  "cache_states_total": {
+    "cache_hit": 706071,
+    "cache_miss": 7684
+  },
+  "run": {
+    "run_id": "sweep-on",
+    "gate_token": "e3d1b772b6d9dc605ac8f210ec11a419fa338799f70c634928beca34e33fb1ed",
+    "started_at": "2026-09-18T05:15:51.806098-05:00",
+    "started_at_utc": "2026-09-18T10:15:51.806165+00:00",
+    "finished_at": "2026-09-18T05:17:40.120595-05:00",
+    "finished_at_utc": "2026-09-18T10:17:40.307421+00:00",
+    "api_spend_usd": 0.0,
+    "gpu_minutes": 0.0,
+    "wall_seconds": 108.06225320001249,
+    "record_path": "/path/to/redis-readthrough-benchmark/results/raw/sweep-on.json",
+    "docker_contention": {
+      "probe": "docker ps --no-trunc --format {{.Names}}\t{{.Image}}\t{{.Status}}",
+      "read_at": "2026-09-18T05:15:51.806098-05:00",
+      "containers": [
+        {
+          "name": "redis-readthrough-benchmark-app-1",
+          "image": "redis-readthrough-benchmark-app",
+          "status": "Up 1 second"
+        },
+        {
+          "name": "redis-readthrough-benchmark-redis-1",
+          "image": "redis@sha256:e7723ff73d963f5cc6d9c4643ea3d989527a402a319239054e9472a7fb9219a2",
+          "status": "Up 8 minutes (healthy)"
+        },
+        {
+          "name": "redis-readthrough-benchmark-postgres-1",
+          "image": "postgres@sha256:e62fbf9d3e2b49816a32c400ed2dba83e3b361e6833e624024309c35d334b412",
+          "status": "Up 8 minutes (healthy)"
+        }
+      ],
+      "container_count": 3,
+      "error": null
+    },
+    "docker_contention_at_finish": {
+      "probe": "docker ps --no-trunc --format {{.Names}}\t{{.Image}}\t{{.Status}}",
+      "read_at": "2026-09-18T05:17:40.120595-05:00",
+      "containers": [
+        {
+          "name": "redis-readthrough-benchmark-app-1",
+          "image": "redis-readthrough-benchmark-app",
+          "status": "Up About a minute"
+        },
+        {
+          "name": "redis-readthrough-benchmark-redis-1",
+          "image": "redis@sha256:e7723ff73d963f5cc6d9c4643ea3d989527a402a319239054e9472a7fb9219a2",
+          "status": "Up 10 minutes (healthy)"
+        },
+        {
+          "name": "redis-readthrough-benchmark-postgres-1",
+          "image": "postgres@sha256:e62fbf9d3e2b49816a32c400ed2dba83e3b361e6833e624024309c35d334b412",
+          "status": "Up 10 minutes (healthy)"
+        }
+      ],
+      "container_count": 3,
+      "error": null
+    }
+  }
+}

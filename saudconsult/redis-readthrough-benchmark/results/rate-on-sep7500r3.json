@@ -1,0 +1,102 @@
+{
+  "arm": "on",
+  "executor": "constant-arrival-rate",
+  "rates": [
+    7500
+  ],
+  "duration": "10s",
+  "p99_ceiling_ms": 250.0,
+  "max_drop_fraction": 0.01,
+  "levels": [
+    {
+      "target_rate": 7500,
+      "achieved_rps": 7472.4,
+      "completed": 74749,
+      "dropped_iterations": 255,
+      "failed_rate": 0,
+      "p50_ms": 1.75,
+      "p99_ms": 62.74,
+      "max_ms": 218.67,
+      "cache_states": {
+        "cache_hit": 74104,
+        "cache_miss": 645
+      },
+      "dropped_fraction": 0.0034,
+      "passed": true
+    }
+  ],
+  "capacity_at_p99_ceiling": {
+    "target_rate": 7500,
+    "achieved_rps": 7472.4,
+    "completed": 74749,
+    "dropped_iterations": 255,
+    "failed_rate": 0,
+    "p50_ms": 1.75,
+    "p99_ms": 62.74,
+    "max_ms": 218.67,
+    "cache_states": {
+      "cache_hit": 74104,
+      "cache_miss": 645
+    },
+    "dropped_fraction": 0.0034,
+    "passed": true
+  },
+  "run": {
+    "run_id": "rate-on-sep7500r3",
+    "gate_token": "e3d1b772b6d9dc605ac8f210ec11a419fa338799f70c634928beca34e33fb1ed",
+    "started_at": "2026-09-18T05:21:26.871942-05:00",
+    "started_at_utc": "2026-09-18T10:21:26.871993+00:00",
+    "finished_at": "2026-09-18T05:21:43.958790-05:00",
+    "finished_at_utc": "2026-09-18T10:21:44.168676+00:00",
+    "api_spend_usd": 0.0,
+    "gpu_minutes": 0.0,
+    "wall_seconds": 16.81544069998199,
+    "record_path": "/path/to/redis-readthrough-benchmark/results/raw/rate-on-sep7500r3.json",
+    "docker_contention": {
+      "probe": "docker ps --no-trunc --format {{.Names}}\t{{.Image}}\t{{.Status}}",
+      "read_at": "2026-09-18T05:21:26.871942-05:00",
+      "containers": [
+        {
+          "name": "redis-readthrough-benchmark-app-1",
+          "image": "redis-readthrough-benchmark-app",
+          "status": "Up 5 minutes"
+        },
+        {
+          "name": "redis-readthrough-benchmark-redis-1",
+          "image": "redis@sha256:e7723ff73d963f5cc6d9c4643ea3d989527a402a319239054e9472a7fb9219a2",
+          "status": "Up 14 minutes (healthy)"
+        },
+        {
+          "name": "redis-readthrough-benchmark-postgres-1",
+          "image": "postgres@sha256:e62fbf9d3e2b49816a32c400ed2dba83e3b361e6833e624024309c35d334b412",
+          "status": "Up 14 minutes (healthy)"
+        }
+      ],
+      "container_count": 3,
+      "error": null
+    },
+    "docker_contention_at_finish": {
+      "probe": "docker ps --no-trunc --format {{.Names}}\t{{.Image}}\t{{.Status}}",
+      "read_at": "2026-09-18T05:21:43.958790-05:00",
+      "containers": [
+        {
+          "name": "redis-readthrough-benchmark-app-1",
+          "image": "redis-readthrough-benchmark-app",
+          "status": "Up 5 minutes"
+        },
+        {
+          "name": "redis-readthrough-benchmark-redis-1",
+          "image": "redis@sha256:e7723ff73d963f5cc6d9c4643ea3d989527a402a319239054e9472a7fb9219a2",
+          "status": "Up 14 minutes (healthy)"
+        },
+        {
+          "name": "redis-readthrough-benchmark-postgres-1",
+          "image": "postgres@sha256:e62fbf9d3e2b49816a32c400ed2dba83e3b361e6833e624024309c35d334b412",
+          "status": "Up 14 minutes (healthy)"
+        }
+      ],
+      "container_count": 3,
+      "error": null
+    }
+  }
+}

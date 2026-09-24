@@ -1,0 +1,188 @@
+{
+  "withdrawn": {
+    "status": "withdrawn",
+    "aggregate": false,
+    "withdrawn_on": "2026-07-31",
+    "marked_on": "2026-09-18",
+    "run": "sensitivity: milder skew, zipf_a=0.8",
+    "reason": "The milder-skew sensitivity run (zipf_a=0.8) was withdrawn on 2026-07-31. It executed no integrity guards, no driver-ceiling probe and no checksum pass, so it could not discriminate the hypothesis it was cited for -- that the aggressive skew does not inflate the result. Its figures, including the 1.527x closed-loop ratio, are unvalidated and must not be aggregated, quoted or compared against the primary run.",
+    "see": "results/RESULTS.md, the retracted list, item 13",
+    "quotation_status": "frozen -- the 1.527x above is quoted here only to identify WHICH figure was withdrawn. It is not a live claim, and no document in this repository may cite it as one.",
+    "sibling_records": [
+      "results/sensitivity-mild-skew.json",
+      "results/arm-off-mild.json",
+      "results/arm-on-mild.json"
+    ]
+  },
+  "arm": "on",
+  "ladder": [
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256,
+    512
+  ],
+  "duration": "8s",
+  "warmup": "3s",
+  "workload": {
+    "requests": 200000,
+    "distinct_tenants_touched": 19361,
+    "n_tenants_total": 20000,
+    "share_top_1pct_of_tenants": 0.3158,
+    "share_top_10_tenants": 0.1121,
+    "theoretical_max_hit_rate": 0.9032,
+    "note": "theoretical_max_hit_rate is the ceiling a perfect cache could reach on this sequence: every request after the first for a given key. The measured hit rate must be at or below it.",
+    "zipf_a": 0.8
+  },
+  "levels": [
+    {
+      "vus": 4,
+      "rps": 2943.4,
+      "completed": 23538,
+      "failed_rate": 0,
+      "ms": {
+        "p50": 0.96,
+        "p95": 2.67,
+        "p99": 3.34,
+        "max": 10.62,
+        "avg": 1.24
+      },
+      "cache_states": {
+        "cache_hit": 18695,
+        "cache_miss": 4843
+      }
+    },
+    {
+      "vus": 8,
+      "rps": 6022.8,
+      "completed": 48208,
+      "failed_rate": 0,
+      "ms": {
+        "p50": 1.05,
+        "p95": 2.44,
+        "p99": 3.8,
+        "max": 15.21,
+        "avg": 1.21
+      },
+      "cache_states": {
+        "cache_hit": 45665,
+        "cache_miss": 2543
+      }
+    },
+    {
+      "vus": 16,
+      "rps": 7497.1,
+      "completed": 59971,
+      "failed_rate": 0,
+      "ms": {
+        "p50": 1.75,
+        "p95": 3.71,
+        "p99": 6.52,
+        "max": 19.39,
+        "avg": 1.99
+      },
+      "cache_states": {
+        "cache_hit": 58557,
+        "cache_miss": 1414
+      }
+    },
+    {
+      "vus": 32,
+      "rps": 8365.3,
+      "completed": 66954,
+      "failed_rate": 0,
+      "ms": {
+        "p50": 3.38,
+        "p95": 7.29,
+        "p99": 10.15,
+        "max": 22.38,
+        "avg": 3.68
+      },
+      "cache_states": {
+        "cache_hit": 66359,
+        "cache_miss": 595
+      }
+    },
+    {
+      "vus": 64,
+      "rps": 10394.4,
+      "completed": 83156,
+      "failed_rate": 0,
+      "ms": {
+        "p50": 5.64,
+        "p95": 9.09,
+        "p99": 15.16,
+        "max": 46.03,
+        "avg": 5.98
+      },
+      "cache_states": {
+        "cache_hit": 82622,
+        "cache_miss": 534
+      }
+    },
+    {
+      "vus": 128,
+      "rps": 9734.9,
+      "completed": 77957,
+      "failed_rate": 0,
+      "ms": {
+        "p50": 12.13,
+        "p95": 19.26,
+        "p99": 39.54,
+        "max": 83.83,
+        "avg": 12.92
+      },
+      "cache_states": {
+        "cache_hit": 77277,
+        "cache_miss": 680
+      }
+    },
+    {
+      "vus": 256,
+      "rps": 10434.9,
+      "completed": 83673,
+      "failed_rate": 0,
+      "ms": {
+        "p50": 22.92,
+        "p95": 38.26,
+        "p99": 54.1,
+        "max": 162.6,
+        "avg": 24.17
+      },
+      "cache_states": {
+        "cache_hit": 83416,
+        "cache_miss": 257
+      }
+    },
+    {
+      "vus": 512,
+      "rps": 10340.9,
+      "completed": 83201,
+      "failed_rate": 0,
+      "ms": {
+        "p50": 45.36,
+        "p95": 76.65,
+        "p99": 96.72,
+        "max": 862.5,
+        "avg": 48.7
+      },
+      "cache_states": {
+        "cache_hit": 83196,
+        "cache_miss": 5
+      }
+    }
+  ],
+  "sustained": {
+    "sustained_rps": 10434.9,
+    "at_vus": 256,
+    "p99_ms": 54.1,
+    "p50_ms": 22.92
+  },
+  "cache_states_total": {
+    "cache_hit": 515787,
+    "cache_miss": 10871
+  }
+}

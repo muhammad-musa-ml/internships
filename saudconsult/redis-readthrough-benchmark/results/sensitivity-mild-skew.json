@@ -1,0 +1,26 @@
+{
+  "withdrawn": {
+    "status": "withdrawn",
+    "aggregate": false,
+    "withdrawn_on": "2026-07-31",
+    "marked_on": "2026-09-18",
+    "run": "sensitivity: milder skew, zipf_a=0.8",
+    "reason": "The milder-skew sensitivity run (zipf_a=0.8) was withdrawn on 2026-07-31. It executed no integrity guards, no driver-ceiling probe and no checksum pass, so it could not discriminate the hypothesis it was cited for -- that the aggressive skew does not inflate the result. Its figures, including the 1.527x closed-loop ratio, are unvalidated and must not be aggregated, quoted or compared against the primary run.",
+    "see": "results/RESULTS.md, the retracted list, item 13",
+    "quotation_status": "frozen -- the 1.527x above is quoted here only to identify WHICH figure was withdrawn. It is not a live claim, and no document in this repository may cite it as one.",
+    "sibling_records": [
+      "results/sensitivity-mild-skew.json",
+      "results/arm-off-mild.json",
+      "results/arm-on-mild.json"
+    ]
+  },
+  "zipf_a": 0.8,
+  "share_top_10_tenants": 0.1121,
+  "uncached_rps": 6834.9,
+  "cached_rps": 10434.9,
+  "ratio": 1.527,
+  "cache_states": {
+    "cache_hit": 515787,
+    "cache_miss": 10871
+  }
+}

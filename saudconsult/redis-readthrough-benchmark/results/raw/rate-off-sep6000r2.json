@@ -1,0 +1,103 @@
+{
+  "api_spend_usd": 0.0,
+  "capacity_at_p99_ceiling": {
+    "achieved_rps": 5974.0,
+    "cache_states": {
+      "cache_off": 59827
+    },
+    "completed": 59827,
+    "dropped_fraction": 0.0029,
+    "dropped_iterations": 174,
+    "failed_rate": 0,
+    "max_ms": 166.93,
+    "p50_ms": 9.31,
+    "p99_ms": 58.18,
+    "passed": true,
+    "target_rate": 6000
+  },
+  "docker_contention": {
+    "container_count": 3,
+    "containers": [
+      {
+        "image": "redis-readthrough-benchmark-app",
+        "name": "redis-readthrough-benchmark-app-1",
+        "status": "Up 6 minutes"
+      },
+      {
+        "image": "redis@sha256:e7723ff73d963f5cc6d9c4643ea3d989527a402a319239054e9472a7fb9219a2",
+        "name": "redis-readthrough-benchmark-redis-1",
+        "status": "Up 7 minutes (healthy)"
+      },
+      {
+        "image": "postgres@sha256:e62fbf9d3e2b49816a32c400ed2dba83e3b361e6833e624024309c35d334b412",
+        "name": "redis-readthrough-benchmark-postgres-1",
+        "status": "Up 7 minutes (healthy)"
+      }
+    ],
+    "error": null,
+    "probe": "docker ps --no-trunc --format {{.Names}}\t{{.Image}}\t{{.Status}}",
+    "read_at": "2026-09-18T05:14:22.097445-05:00"
+  },
+  "docker_contention_at_finish": {
+    "container_count": 3,
+    "containers": [
+      {
+        "image": "redis-readthrough-benchmark-app",
+        "name": "redis-readthrough-benchmark-app-1",
+        "status": "Up 7 minutes"
+      },
+      {
+        "image": "redis@sha256:e7723ff73d963f5cc6d9c4643ea3d989527a402a319239054e9472a7fb9219a2",
+        "name": "redis-readthrough-benchmark-redis-1",
+        "status": "Up 7 minutes (healthy)"
+      },
+      {
+        "image": "postgres@sha256:e62fbf9d3e2b49816a32c400ed2dba83e3b361e6833e624024309c35d334b412",
+        "name": "redis-readthrough-benchmark-postgres-1",
+        "status": "Up 7 minutes (healthy)"
+      }
+    ],
+    "error": null,
+    "probe": "docker ps --no-trunc --format {{.Names}}\t{{.Image}}\t{{.Status}}",
+    "read_at": "2026-09-18T05:14:39.111726-05:00"
+  },
+  "driver": "run_rate_test.py",
+  "env": {
+    "cpu_count": 24,
+    "machine": "AMD64",
+    "platform": "win32",
+    "python": "3.13.5"
+  },
+  "finished_at": "2026-09-18T05:14:39.111726-05:00",
+  "finished_at_utc": "2026-09-18T10:14:39.309744+00:00",
+  "gate_token": "e3d1b772b6d9dc605ac8f210ec11a419fa338799f70c634928beca34e33fb1ed",
+  "gpu_minutes": 0.0,
+  "levels_measured": 1,
+  "levels_offered": 1,
+  "levels_passed": 1,
+  "measurement": {
+    "arm": "off",
+    "base": "http://app:8000",
+    "duration": "10s",
+    "host_base": "http://127.0.0.1:58000",
+    "kind": "open-loop constant-arrival-rate ladder",
+    "load_generator_image": "grafana/k6@sha256:e7eeddf1ce2361df6920d925297f487c0ba549c44be242c6a9c22f28d9b08efa",
+    "max_drop_fraction": 0.01,
+    "measure_offset": 100000,
+    "net": "redis-readthrough-benchmark_default",
+    "p99_ceiling_ms": 250.0,
+    "rates": [
+      6000
+    ],
+    "tag": "-sep6000r2",
+    "warmup": "4s",
+    "warmup_offset": 0
+  },
+  "output": "rate-off-sep6000r2.json",
+  "run_id": "rate-off-sep6000r2",
+  "schema": "readthrough/run/1",
+  "schema_version": "canonkit/1",
+  "started_at": "2026-09-18T05:14:22.097445-05:00",
+  "started_at_utc": "2026-09-18T10:14:22.097505+00:00",
+  "wall_seconds": 16.74067699999432
+}

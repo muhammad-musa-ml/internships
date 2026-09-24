@@ -1,0 +1,77 @@
+{
+  "absent_inputs": [],
+  "artifact": "redis-readthrough-benchmark",
+  "assertions": [
+    "ENV-PATH-LENGTH=true",
+    "ENV-PATH-CASE=true",
+    "ENV-NOT-SYNCED=true",
+    "IMAGES-DIGEST-PINNED=true",
+    "LOAD-GENERATOR-PINNED=true",
+    "WORKLOAD-SEQUENCE-DESCRIBED=true"
+  ],
+  "dated_at": "2026-09-18T05:07:27.101906-05:00",
+  "dated_at_utc": "2026-09-18T10:07:27.101991+00:00",
+  "declared_input_count": 17,
+  "declared_inputs": [
+    "app/Dockerfile",
+    "app/main.py",
+    "app/seed.py",
+    "benchlib/workload.py",
+    "capture_dbsize.py",
+    "collect_checksums.py",
+    "docker-compose.yml",
+    "finalize.py",
+    "k6/null.js",
+    "k6/rate.js",
+    "k6/sweep.js",
+    "make_sequence.py",
+    "results/sequence.json",
+    "results/workload.json",
+    "run_benchmark.py",
+    "run_k6_sweep.py",
+    "run_rate_test.py"
+  ],
+  "env": {
+    "platform": "win32",
+    "python": "3.13.5"
+  },
+  "environment_probe": {
+    "error": null,
+    "reachable": true,
+    "server_version": "28.4.0"
+  },
+  "failed_ids": [],
+  "fallback_source": null,
+  "fallback_wording": "",
+  "inputs_hash": "13a34aa0848c551e7a730e308b986e6a96a9ca024e4b15883258949afbc993fd",
+  "passed": true,
+  "realized": {
+    "ENV-NOT-SYNCED": [],
+    "ENV-PATH-CASE": 0,
+    "ENV-PATH-LENGTH": 74,
+    "IMAGES-DIGEST-PINNED": [
+      "app/Dockerfile: python@sha256:9d2e5553305c7c7b0097999bb17187c69b921ccd6bc9d40e4bb5ebe652c00285",
+      "docker-compose.yml: postgres@sha256:e62fbf9d3e2b49816a32c400ed2dba83e3b361e6833e624024309c35d334b412",
+      "docker-compose.yml: redis@sha256:e7723ff73d963f5cc6d9c4643ea3d989527a402a319239054e9472a7fb9219a2"
+    ],
+    "LOAD-GENERATOR-PINNED": {
+      "distinct": [
+        "grafana/k6@sha256:e7eeddf1ce2361df6920d925297f487c0ba549c44be242c6a9c22f28d9b08efa"
+      ],
+      "sources": [
+        "run_k6_sweep.py",
+        "run_rate_test.py"
+      ]
+    },
+    "WORKLOAD-SEQUENCE-DESCRIBED": {
+      "declared_distinct": 11106,
+      "declared_requests": 200000,
+      "error": null,
+      "sequence_distinct": 11106,
+      "sequence_length": 200000
+    }
+  },
+  "run_token": "e3d1b772b6d9dc605ac8f210ec11a419fa338799f70c634928beca34e33fb1ed",
+  "schema": "readthrough/gate/1",
+  "schema_version": "canonkit/1"
+}

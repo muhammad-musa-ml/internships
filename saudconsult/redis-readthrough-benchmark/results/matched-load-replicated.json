@@ -1,0 +1,79 @@
+{
+  "design": "matched offered load, 6000 rps, open loop, 3 replicates per arm",
+  "cached": {
+    "n": 3,
+    "achieved_rps": [
+      5984.3,
+      5997.5,
+      5976.6
+    ],
+    "p50_ms": [
+      4.73,
+      4.47,
+      7.72
+    ],
+    "p99_ms": [
+      39.59,
+      57.19,
+      77.31
+    ],
+    "dropped_fraction": [
+      0.0021,
+      0.00073,
+      0.00158
+    ],
+    "median_p99_ms": 57.19,
+    "median_achieved": 5984.3,
+    "all_passed": true
+  },
+  "uncached": {
+    "n": 3,
+    "achieved_rps": [
+      4394.5,
+      4413.9,
+      4579.3
+    ],
+    "p50_ms": [
+      372.52,
+      369.16,
+      360.2
+    ],
+    "p99_ms": [
+      1647.24,
+      1612.41,
+      1513.32
+    ],
+    "dropped_fraction": [
+      0.24872,
+      0.24012,
+      0.21578
+    ],
+    "median_p99_ms": 1612.41,
+    "median_achieved": 4413.9,
+    "all_passed": false
+  },
+  "p99_ratio_uncached_over_cached": 28.2,
+  "delivered_ratio_cached_over_uncached": 1.356,
+  "INSTABILITY_DISCLOSURE": {
+    "observation": "an EARLIER single uncached run at the same 6000 rps PASSED",
+    "earlier_run": {
+      "n": 1,
+      "achieved_rps": [
+        5993.9
+      ],
+      "p50_ms": [
+        9.03
+      ],
+      "p99_ms": [
+        72.53
+      ],
+      "dropped_fraction": [
+        0.00055
+      ],
+      "median_p99_ms": 72.53,
+      "median_achieved": 5993.9,
+      "all_passed": true
+    },
+    "meaning": "the uncached arm is bimodal at 6000 rps across runs on this host; the replicated 3-run block is reported, and the single earlier passing observation is NOT discarded - it is why the knee is reported as unstable rather than as a point."
+  }
+}

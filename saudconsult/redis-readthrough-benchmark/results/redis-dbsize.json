@@ -1,0 +1,71 @@
+{
+  "captured": "read by capture_dbsize.py after the cached arm finished, immediately before finalize.py",
+  "container": "redis-readthrough-benchmark-redis-1",
+  "dbsize": 7021,
+  "previous": {
+    "captured": "after the offset-corrected cached-arm sweep",
+    "dbsize": 10536
+  },
+  "probe": "docker exec redis-readthrough-benchmark-redis-1 redis-cli DBSIZE",
+  "raw_reply": "7021",
+  "run": {
+    "api_spend_usd": 0.0,
+    "docker_contention": {
+      "container_count": 3,
+      "containers": [
+        {
+          "image": "redis-readthrough-benchmark-app",
+          "name": "redis-readthrough-benchmark-app-1",
+          "status": "Up 6 minutes"
+        },
+        {
+          "image": "redis@sha256:e7723ff73d963f5cc6d9c4643ea3d989527a402a319239054e9472a7fb9219a2",
+          "name": "redis-readthrough-benchmark-redis-1",
+          "status": "Up 14 minutes (healthy)"
+        },
+        {
+          "image": "postgres@sha256:e62fbf9d3e2b49816a32c400ed2dba83e3b361e6833e624024309c35d334b412",
+          "name": "redis-readthrough-benchmark-postgres-1",
+          "status": "Up 14 minutes (healthy)"
+        }
+      ],
+      "error": null,
+      "probe": "docker ps --no-trunc --format {{.Names}}\t{{.Image}}\t{{.Status}}",
+      "read_at": "2026-09-18T05:22:07.923414-05:00"
+    },
+    "docker_contention_at_finish": {
+      "container_count": 3,
+      "containers": [
+        {
+          "image": "redis-readthrough-benchmark-app",
+          "name": "redis-readthrough-benchmark-app-1",
+          "status": "Up 6 minutes"
+        },
+        {
+          "image": "redis@sha256:e7723ff73d963f5cc6d9c4643ea3d989527a402a319239054e9472a7fb9219a2",
+          "name": "redis-readthrough-benchmark-redis-1",
+          "status": "Up 14 minutes (healthy)"
+        },
+        {
+          "image": "postgres@sha256:e62fbf9d3e2b49816a32c400ed2dba83e3b361e6833e624024309c35d334b412",
+          "name": "redis-readthrough-benchmark-postgres-1",
+          "status": "Up 14 minutes (healthy)"
+        }
+      ],
+      "error": null,
+      "probe": "docker ps --no-trunc --format {{.Names}}\t{{.Image}}\t{{.Status}}",
+      "read_at": "2026-09-18T05:22:08.475076-05:00"
+    },
+    "finished_at": "2026-09-18T05:22:08.475076-05:00",
+    "finished_at_utc": "2026-09-18T10:22:08.664129+00:00",
+    "gate_token": "e3d1b772b6d9dc605ac8f210ec11a419fa338799f70c634928beca34e33fb1ed",
+    "gpu_minutes": 0.0,
+    "record_path": "/path/to/redis-readthrough-benchmark/results/raw/dbsize.json",
+    "run_id": "dbsize",
+    "started_at": "2026-09-18T05:22:07.923414-05:00",
+    "started_at_utc": "2026-09-18T10:22:07.923464+00:00",
+    "wall_seconds": 0.27198270001099445
+  },
+  "schema": "readthrough/dbsize/1",
+  "schema_version": "canonkit/1"
+}

@@ -1,0 +1,74 @@
+{
+  "arm": "off",
+  "executor": "constant-arrival-rate",
+  "rates": [
+    6000,
+    6500,
+    7000
+  ],
+  "duration": "10s",
+  "p99_ceiling_ms": 250.0,
+  "max_drop_fraction": 0.01,
+  "levels": [
+    {
+      "target_rate": 6000,
+      "achieved_rps": 5993.9,
+      "completed": 59970,
+      "dropped_iterations": 33,
+      "failed_rate": 0,
+      "p50_ms": 9.03,
+      "p99_ms": 72.53,
+      "max_ms": 222.64,
+      "cache_states": {
+        "cache_off": 59970
+      },
+      "dropped_fraction": 0.00055,
+      "passed": true
+    },
+    {
+      "target_rate": 6500,
+      "achieved_rps": 6463.7,
+      "completed": 64752,
+      "dropped_iterations": 249,
+      "failed_rate": 0,
+      "p50_ms": 19.13,
+      "p99_ms": 129.94,
+      "max_ms": 469.63,
+      "cache_states": {
+        "cache_off": 64752
+      },
+      "dropped_fraction": 0.00383,
+      "passed": true
+    },
+    {
+      "target_rate": 7000,
+      "achieved_rps": 6959.5,
+      "completed": 69770,
+      "dropped_iterations": 231,
+      "failed_rate": 0,
+      "p50_ms": 14.41,
+      "p99_ms": 81.81,
+      "max_ms": 256.21,
+      "cache_states": {
+        "cache_off": 69770
+      },
+      "dropped_fraction": 0.0033,
+      "passed": true
+    }
+  ],
+  "capacity_at_p99_ceiling": {
+    "target_rate": 7000,
+    "achieved_rps": 6959.5,
+    "completed": 69770,
+    "dropped_iterations": 231,
+    "failed_rate": 0,
+    "p50_ms": 14.41,
+    "p99_ms": 81.81,
+    "max_ms": 256.21,
+    "cache_states": {
+      "cache_off": 69770
+    },
+    "dropped_fraction": 0.0033,
+    "passed": true
+  }
+}

@@ -1,0 +1,56 @@
+services:
+  postgres:
+    image: postgres@sha256:e62fbf9d3e2b49816a32c400ed2dba83e3b361e6833e624024309c35d334b412
+    environment:
+      POSTGRES_PASSWORD: bench
+      POSTGRES_USER: bench
+      POSTGRES_DB: bench
+    command:
+      # Pinned identically for both arms. These are ordinary small-server settings,
+      # not a handicap: the uncached arm gets a warm, properly-sized buffer pool so
+      # its lookup is disk-free and the comparison is CPU/round-trip bound, which is
+      # the honest shape of the claim being tested.
+      - "postgres"
+      - "-c"
+      - "shared_buffers=512MB"
+      - "-c"
+      - "max_connections=200"
+      - "-c"
+      - "effective_cache_size=1536MB"
+    ports:
+      - "55432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bench -d bench"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  redis:
+    image: redis@sha256:e7723ff73d963f5cc6d9c4643ea3d989527a402a319239054e9472a7fb9219a2
+    command: ["redis-server", "--save", "", "--appendonly", "no", "--maxmemory", "512mb", "--maxmemory-policy", "allkeys-lru"]
+    ports:
+      - "56379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  app:
+    build: ./app
+    environment:
+      PG_DSN: postgresql://bench:bench@postgres:5432/bench
+      REDIS_URL: redis://redis:6379/0
+      # CACHE is set per ARM by the driver via `docker compose up -d --force-recreate app`.
+      CACHE: "${CACHE:-off}"
+      WORKERS: "${WORKERS:-4}"
+      PG_POOL_MIN: "8"
+      PG_POOL_MAX: "32"
+      CACHE_TTL_SECONDS: "300"
+    ports:
+      - "58000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
