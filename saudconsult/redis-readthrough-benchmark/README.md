@@ -7,7 +7,7 @@ Measured <!--artifact:key:dated_at-->2026-09-18T05:22:01.784149-05:00<!--/artifa
 <!-- artifact:claim:begin -->
 **What this is.** A standalone measurement of the MECHANISM behind a claim made
 about work I did as Data Science & Software Engineering Intern at SAUDCONSULT
-(Saudi Consulting Services for Engineering Consultancy), on site in Riyadh,
+(Saudi Consulting Services for Engineering Consultancy), remotely,
 from 2024-06 to 2024-08. It is deliberately NOT described as a from-scratch
 reproduction of the thing I built there, because it is not one: the service I
 fronted with this cache was never load-tested inside the firm, so there is no
@@ -25,7 +25,7 @@ so a reader can check it rather than take it.
 |---|---|
 | Employer | SAUDCONSULT (Saudi Consulting Services for Engineering Consultancy) |
 | Role | Data Science & Software Engineering Intern |
-| Placement | 2024-06 to 2024-08, on site in Riyadh |
+| Placement | 2024-06 to 2024-08, remote |
 | Workstream | P5 |
 | Canon | saudconsult |
 | Bullet id | saudconsult:P5-B3 |

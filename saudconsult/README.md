@@ -1,7 +1,6 @@
 # SAUDCONSULT
 
-**Data Science & Software Engineering Intern, Jun 2024 – Aug 2024, on site in
-Riyadh.**
+**Data Science & Software Engineering Intern, Jun 2024 – Aug 2024, remote.**
 
 Saudi Consulting Services for Engineering Consultancy. This folder belongs to a
 repository of from-scratch rebuilds, built 2026-09, of work done during that

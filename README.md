@@ -6,7 +6,7 @@ numbers can be checked.
 | Placement | Role | When | Where | Folder |
 |---|---|---|---|---|
 | **DeepLearnHQ** | AI Engineer Intern | Jun 2025 – Aug 2025 | remote | [`deeplearn-hq/`](deeplearn-hq/) |
-| **SAUDCONSULT** (Saudi Consulting Services for Engineering Consultancy) | Data Science & Software Engineering Intern | Jun 2024 – Aug 2024 | on site, Riyadh | [`saudconsult/`](saudconsult/) |
+| **SAUDCONSULT** (Saudi Consulting Services for Engineering Consultancy) | Data Science & Software Engineering Intern | Jun 2024 – Aug 2024 | remote | [`saudconsult/`](saudconsult/) |
 
 ## The commit dates here are this repository's, not the placements'
 
